@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Google IO 2024 - La Nuevas herramientas de IA</title>
+    <title> ¿Cómo copiar y pegar con desde y hacia una terminal GNU/Linux?</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -97,71 +97,59 @@
           <header>
             <div class="title">
               <h2>
-                <a href="#">Google IO 2024 - La Nuevas herramientas de IA</a>
+                <a href="#"> ¿Cómo copiar y pegar con desde y hacia una terminal GNU/Linux?</a>
               </h2>
-              <p>#google #ia #gemini</p>
+              <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
             </div>
             <div class="meta">
-              <time class="published" datetime="2024-05-16">Mayo 16, 2024</time>
+              <time class="published" datetime="2024-05-15">Mayo 15, 2024</time>
               <a href="#" class="author"
                 ><span class="name"></span><img src="images/avatar.jpg" alt=""
               /></a>
             </div>
           </header>
           <span class="image featured"
-            ><img src="images/pic02.jpg" alt=""
+            ><img src="images/pic-01.jpeg" alt=""
           /></span>
           <p>
-            El martes 14 de mayo se llevó a cabo Google I/O 2024, donde la
-            compañía reveló una serie de innovaciones que van desde mejoras en
-            inteligencia artificial hasta nuevas herramientas para
-            desarrolladores. El evento destacó el lanzamiento de Firebase
-            Genkit, un nuevo framework para crear aplicaciones con inteligencia
-            artificial, y LearnLM, un modelo generativo diseñado para la
-            educación. Además, Google presentó actualizaciones en su modelo de
-            IA Gemini, incluyendo nuevas capacidades para Gmail y Google Maps.
+            Copiar y pegar en una terminal de GNU/Linux es fundamental para trabajar de manera eficiente y saber cómo copiar y pegar en una terminal de GNU/Linux es crucial por varias razones como: La eficiencia; copiar y pegar te permite reutilizar comandos o fragmentos de texto sin tener que volver a escribirlos manualmente. Esto ahorra tiempo y reduce errores. La documentación y comunicación, Si trabajas en un proyecto o colaboras con otros, copiar y pegar te permite compartir comandos o resultados fácilmente. También es útil para documentar procesos o soluciones. Ademas de la automatización; al copiar y pegar comandos, puedes crear scripts o automatizar tareas repetitivas. Esto es especialmente útil en administración de sistemas y programación.
           </p>
           <p>
-            Google anunció que su modelo de IA, Gemini, ahora se integrará
-            profundamente en la experiencia de búsqueda. Esto incluye resúmenes
-            generativos de búsquedas y nuevas formas de interactuar con los
-            resultados.
+            Ahora pasaremos a explicar como podemos copiar y pegar de desde y hacia la terminal GNU/Linux usando el comando xsel. Este comando no solo va servir para copiar y pegar en una computadora personal sino que también funciona para copiar y pegar en un servidor remoto de forma fluida y apreciablemente eficiente. 
           </p>
+          <p><strong>Primer Paso:</strong> Instalar xsel</p>
+          <p>Para Debian/Ubuntu/Mint</p>
+          <code>sudo apt install xsel</code>
+          <p>Para RHEL/CentOS/Rocky</p>
+          <code>sudo dnf install xsel</code>
+          <p><strong>Segundo Paso:</strong></p>
           <p>
-            Google I/O 2024 comenzó con la presentación de Firebase Genkit, una
-            herramienta de código abierto bajo la licencia Apache 2.0, diseñada
-            para facilitar la creación de aplicaciones con inteligencia
-            artificial. Este framework soporta JavaScript/TypeScript y pronto
-            también Go. Google destacó su uso en generación de contenido,
-            traducción de textos y creación de imágenes. Sundar Pichai, CEO de
-            Google, también mencionó LearnLM, un nuevo modelo de IA generativa
-            para la educación, desarrollado en colaboración con DeepMind y
-            Google Research. Esta herramienta ayuda a los profesores en la
-            planificación de lecciones y en la búsqueda de materiales
-            específicos para diferentes grupos de estudiantes.
+            Una vez instalado el comando funciona de la siguiente manera. Para copiar desde la terminal:
           </p>
-          <p>
-            El evento mostró cómo la inteligencia artificial se está integrando
-            en diversas áreas de los servicios de Google. Gemini AI, una de las
-            herramientas más avanzadas de Google, ahora podrá personalizarse con
-            la nueva opción "Gems", permitiendo a los usuarios crear versiones
-            específicas del asistente para diferentes tareas. Esto se asemeja a
-            la funcionalidad de Character.AI, ofreciendo la posibilidad de crear
-            asistentes personalizados para roles como entrenador de gimnasio o
-            compañero de cocina. Además, Gemini Live permitirá a los usuarios
-            tener conversaciones detalladas con el asistente utilizando comandos
-            de voz y respuestas adaptativas.
-          </p>
-          <p>
-            La implementación de la inteligencia artificial en el ámbito
-            educativo no es nueva. Herramientas como Khan Academy y Duolingo han
-            utilizado IA para personalizar la experiencia de aprendizaje de los
-            usuarios, ofreciendo recomendaciones y evaluaciones en tiempo real.
-            Al igual que LearnLM, estas plataformas buscan optimizar el proceso
-            educativo mediante el uso de tecnologías avanzadas. Google también
-            ha mostrado interés en mejorar la búsqueda con IA, como se vio con
-            el lanzamiento de la Search Generative Experience el año pasado.
-          </p>
+          <code>xsel --input --clipboard </code>
+          <p>Para pegar a la terminal algo previamente selecionado:</p>
+          <code> xsel --output --clipboard</code>
+          <p>Si quieres hacerlo aun mas facil de recordar, puedes crear un alias para el comando. Como por ejemplo pbcopy y pbpaste, para copiar y pegar respectivamente. Edita <code>~/bashrc</code> con vim o nano e inserta estas dos lineas:</p>
+          <pre>
+          <code>
+          alias pbcopy='xsel --input --clipboard'
+          alias pbpaste='xsel --output --clipboard'
+          </code></pre>
+          <p>No olvides guardar los cambios y pasar actulizar le <code>~/bashrc</code> con:</p>
+          <code>source ~/.bashrc</code>
+          <h3>¿Como hacer lo mismo en un servido remoto?</h3>
+          <p>Para hacer lo mismo con un servidor remoto, asegúrate de tener <code>xsel</code> instalado y habilitado X11 con la linea de comando:</p>
+          <code>sudo cat /etc/ssh/sshd_config | grep X11</code>
+          <p>Debe aparecer decomentariado:</p>
+          <pre><code>
+            X11Forwarding yes
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+#	X11Forwarding no
+          </code></pre>
+          <p>Sino aperce descomentariado desberas editar el fichero <code>/etc/ssh/sshd_config</code> para descometeriarlo manualmente. Desde tener encuenta de el comando <code>xsel</code> debe estar instalado en el servidor remoto también.</p>
+          <p>Eso es todo, recuerda apoyarme compartiendo si esta publicación te fue de alguna utilidad. También te dejo el video de YouTube del cual me apoyé para hacer esta publicación. No piense que soy un plagiador de contenido. Ademas de traducirlo al español, También probé este metodo en distribuciones de la familia REd Hatpara constatar que también funciona</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aMzdeZ8vGXQ?si=Obb1kCCdqNl7S7Td" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <footer>
             <ul class="stats">
               <li><a href="#">General</a></li>
