@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title> ¿Cómo copiar y pegar con desde y hacia una terminal GNU/Linux?</title>
+    <title>¿Cómo grabar tu pantalla en Wayland con Gnome?</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -97,9 +97,9 @@
           <header>
             <div class="title">
               <h2>
-                <a href="#"> ¿Cómo copiar y pegar con desde y hacia una terminal GNU/Linux?</a>
+                <a href="#">¿Cómo grabar tu pantalla en Wayland con Gnome?</a>
               </h2>
-              <p>#xsel #gnu/linux #linux</p>
+              <p>#gnome #wayland #screenrecorder #pipewire</p>
             </div>
             <div class="meta">
               <time class="published" datetime="2024-05-17">Mayo 17, 2024</time>
@@ -109,49 +109,32 @@
             </div>
           </header>
           <span class="image featured"
-            ><img src="images/pic-01.jpeg" alt=""
+            ><img src="images/wayfarer.jpg" alt=""
           /></span>
           <p>
-            Copiar y pegar en una terminal de GNU/Linux es fundamental para trabajar de manera eficiente y saber cómo copiar y pegar en una terminal de GNU/Linux es crucial por varias razones como: La eficiencia; copiar y pegar te permite reutilizar comandos o fragmentos de texto sin tener que volver a escribirlos manualmente. Esto ahorra tiempo y reduce errores. La documentación y comunicación, Si trabajas en un proyecto o colaboras con otros, copiar y pegar te permite compartir comandos o resultados fácilmente. También es útil para documentar procesos o soluciones. Ademas de la automatización; al copiar y pegar comandos, puedes crear scripts o automatizar tareas repetitivas. Esto es especialmente útil en administración de sistemas y programación.
+            Este es un tutorial para poder realizar screen recording o grabar pantalla, tanto video como audio. Todo esto, con un programa compatible con Wayland y para Gnome Desktop. Lo he probado con buenos resultados en diferentes configuraciones de hardware. No lo he probado en KDE, ni en Cinnamon, ni en otros entornos de escritorios similares. Supongo que pueda funcionarte. Se que es compatible con Wayland, y pipiware. Me imgino que no debe se compatible con pulseaudio pero hay un montón de screenrecording compatibles con X11 y pulseaudio, ejemplo: <a href="https://itsfoss.com/kazam-screen-recorder/">Kazam</a>, <a href="https://news.itsfoss.com/gnome-42-features/?ref=itsfoss.com">GNOME’s Screen Recorder</a>, etc.
           </p>
           <p>
-            Ahora pasaremos a explicar como podemos copiar y pegar de desde y hacia la terminal GNU/Linux usando el comando xsel. Este comando no solo va servir para copiar y pegar en una computadora personal sino que también funciona para copiar y pegar en un servidor remoto de forma fluida y apreciablemente eficiente. 
+            El sotware a utilizar para grabar pantalla es <strong>Wayfarer</strong>. Un software en desarrollo que se encuentra en github. El escritor de este post no está relacionado con el desarrollador del software, ni es colaborador del desarrollador principal. Lo he usado como usuario con buenos resultados. Después de esta breve introdución comencemos con los pasos a seguir para instalar el software: 
           </p>
-          <p><strong>Primer Paso:</strong> Instalar xsel</p>
-          <p>Para Debian/Ubuntu/Mint</p>
-          <code>sudo apt install xsel</code>
-          <p>Para RHEL/CentOS/Rocky</p>
-          <code>sudo dnf install xsel</code>
-          <p><strong>Segundo Paso:</strong></p>
-          <p>
-            Una vez instalado el comando funciona de la siguiente manera. Para copiar desde la terminal:
-          </p>
-          <code>xsel --input --clipboard </code>
-          <p>Para pegar a la terminal algo previamente selecionado:</p>
-          <code> xsel --output --clipboard</code>
-          <p>Si quieres hacerlo aun mas facil de recordar, puedes crear un alias para el comando. Como por ejemplo pbcopy y pbpaste, para copiar y pegar respectivamente. Edita <code>~/bashrc</code> con vim o nano e inserta estas dos lineas:</p>
-          <pre>
+          <p><strong>Primer Paso:</strong> Clonar el repositorio de github (Esto puede variar con el tiempo) Revise si el link esta activo o disponible.</p>
+          <code>git clone https://github.com/stronnag/wayfarer.git</code>
+          <p><strong>Segundo Paso:</strong> Muevase al fichero wayfarer</p>
+          <code>cd wayfarer</code>
+          <p><strong>Tercer Paso:</strong> Instalé la librerías y los programas necasrios</p>
+          <code>sudo apt install libgtk-4-dev valac libgstreamer1.0-dev libpulse-dev libayatana-appindicator3-dev gir1.2-ayatanaappindicator3-0.1 libgstreamer-plugins-base1.0-dev </code><br>
+          <code>sudo apt install cmake meson ninja-build</code>
+          <p><strong>Cuarto Paso</strong> Compilar Wayfarer</p>
+          <code>meson build</code><br>
+          <code>ninja -C build</code>
+          <p><strong>Quinto paso:</strong> Instalación de Wayfarer</p>
+         
           <code>
-          alias pbcopy='xsel --input --clipboard'
-          alias pbpaste='xsel --output --clipboard'
-          </code></pre>
-          <p>No olvides guardar los cambios y pasar actulizar le <code>~/bashrc</code> con:</p>
-          <code>source ~/.bashrc</code>
-          <h2>¿Como hacer lo mismo en un servido remoto?</h2>
-          <p>Para hacer lo mismo con un servidor remoto, asegúrate de tener <code>xsel</code> instalado y habilitado X11 con la linea de comando:</p>
-          <code>sudo cat /etc/ssh/sshd_config | grep X11</code>
-          <p>Debe aparecer decomentariado:</p>
-          <pre><code>
-            X11Forwarding yes
-#X11DisplayOffset 10
-#X11UseLocalhost yes
-#	X11Forwarding no
-          </code></pre>
-          <p>Sino aperce descomentariado desberas editar el fichero <code>/etc/ssh/sshd_config</code> para descometeriarlo manualmente. Desde tener encuenta de el comando <code>xsel</code> debe estar instalado en el servidor remoto también.</p>
-          <p>Eso es todo, recuerda apoyarme compartiendo si esta publicación te fue de alguna utilidad. También te dejo el video de YouTube del cual me apoyé para hacer esta publicación. No piense que soy un plagiador de contenido. Ademas de traducirlo al español, También probé este metodo en distribuciones de la familia REd Hatpara constatar que también funciona</p>
-          <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/aMzdeZ8vGXQ?si=Obb1kCCdqNl7S7Td" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+          sudo ninja -C build install
+          </code>
+          <p>Con esto debe tener ya Wayfarer instalado en sus sistema GNU/Linux y podrá grabar sus escritorios siun muchos problema. El programa es bastante intuitivo pero si tiene algun poblema en entender ¿cómo usarlo como usurio? vaya a la página del <a href="https://github.com/stronnag/wayfarer">desarrollador de Wayfarer</a> para mas detalle.</p>
+          <p>Si desea desintalar, auxíliese de la herramienta synaptic.</p>
+        
           
           <footer>
             <ul class="stats">
