@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+}
+
+h1 {
+    font-size: 2em; /* Puedes ajustar el tamaño de fuente según tus necesidades */
+}
