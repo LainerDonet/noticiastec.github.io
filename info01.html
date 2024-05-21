@@ -15,7 +15,7 @@
     <div id="wrapper">
       <!-- Header -->
       <header id="header">
-        <h1><a href="index.html">Sitio de Noticias Tec</a></h1>
+        <h1><a href="gate.html">Informes Lufac</a></h1>
         <nav class="links">
           <ul>
             <li><a href="index.html">Noticias</a></li>
@@ -97,112 +97,85 @@
           <header>
             <div class="title">
               <h2>
-                <a href="#"> Informe Lufac N°1</a>
+                <a href="#"> Informe Lufac sobre Docker vs Podnman</a>
               </h2>
-              <p>LUFAC-SGA / Doc. Amilcar-Lainer</p>
+              <p>Ventajas y Desventajas</p>
             </div>
             <div class="meta">
-              <time class="published" datetime="2024-05-17">Mayo 17, 2024</time>
+              <time class="published" datetime="2024-05-21">Mayo 21, 2024</time>
               <a href="#" class="author"
                 ><span class="name"></span><img src="images/avatar.jpg" alt=""
               /></a>
             </div>
           </header>
           <span class="image featured"
-            ><img src="images/pic-lufac.png" alt=""
+            ><img src="images/info02/pic-podvsdock.jpg" alt=""
           /></span>
           <p>
-            El presente informe pretende mostrar todos los adelantes con respecto a LUFAC-SGA (System Graphic Administration). La plataforma de administración gráfica de sistemas que estamos desarrollando tiene como objetivo simplificar y hacer más eficiente el uso de soluciones LUFAC. Al proporcionar una interfaz gráfica intuitiva y fácil de usar, los usuarios podrán realizar tareas de administración de sistemas de manera más efectiva y reducir los errores humanos en el proceso. Con la automatización de tareas comunes, los usuarios también pueden liberar tiempo y recursos valiosos para enfocarse en tareas más críticas.
+            Docker y Podman son dos herramientas relacionadas con la contenerización, pero tienen enfoques diferentes en términos de arquitectura y características. Permíteme explicarte las diferencias clave:
           </p>
-          <p>
-            Nuestra plataforma está diseñada para ser escalable y adaptable a diferentes entornos y configuraciones de sistemas. Además, nuestro equipo de desarrollo se asegurará de que la plataforma sea fácil de mantener y actualizar, lo que garantizará su confiabilidad y longevidad en el futuro. Con esta plataforma, esperamos ayudar a los usuarios a aprovechar al máximo sus sistemas LUFAC y lograr una mayor eficiencia y productividad en su trabajo diario.
-          </p>
-          <span class="image featured">
-          <img src="images/info01/imag_info01.png" alt="">
-          <p><strong>Figura 1.</strong> Inicio de sesión de LUFAC_SGA con la contraseña y usuario del servidor o master del cluster.
-          </p>
-        </span>
-        <span class="image featured">
-          <img src="images/info01/img_infoo1_1.png" alt="">
-          <p><strong>Figura 2.</strong> Entorno de trabajo y Administración del Usuario.
-          </p>
-        </span>
-        <p>
-          LUFAC_SGA está sobre Cockpit. Cockpit es una interfaz de administración de sistemas basada en la web para servidores Linux. Es una herramienta de código abierto que permite a los administradores de sistemas monitorear y administrar múltiples servidores Linux a través de una interfaz gráfica fácil de usar. Con Cockpit, los usuarios pueden realizar tareas comunes de administración de sistemas, como configurar la red, administrar usuarios y grupos, monitorear recursos del sistema, revisar registros y servicios, y realizar actualizaciones de software, entre otras cosas.
-        </p>
-        <p>
-          Cockpit se ejecuta en un servidor Linux y se accede a través de un navegador web, lo que lo hace muy accesible y fácil de usar desde cualquier lugar. La herramienta también proporciona una vista en tiempo real de las estadísticas del sistema, lo que permite a los usuarios monitorear el rendimiento y detectar problemas potenciales antes de que se conviertan en problemas críticos. En resumen, Cockpit es una solución útil y eficiente para administrar servidores Linux, especialmente para aquellos que prefieren una interfaz gráfica en lugar de la línea de comandos.
-        </p>
-        <span class="image featured">
-          <img src="images/info01/img_info01_2.png" alt="">
-          <p><strong>Figura 3.</strong> Visualización de recursos del sistema.
-          </p>
-        </span>
-        <span class="image featured">
-          <img src="images/info01/img_info01_3.png" alt="">
-          <p><strong>Figura 4.</strong> Acceso al terminal del servidor de manera remota
-          </p>
-        </span>
-        <span class="image featured">
-          <img src="images/info01/img_info01_4.png" alt="">
-          <p><strong>Figura 5.</strong> Manejo de Cuentas de Usuario
-          </p>
-        </span>
-        <span class="image featured">
-          <img src="images/info01/img_info01_5.png" alt="">
-          <p><strong>Figura 6.</strong> Manejo de Cuentas de Usuario
-          </p>
-        </span>
-        <p>
-          SELinux, es significa "Security-Enhanced Linux" (Linux con seguridad mejorada), es un mecanismo de seguridad para el sistema operativo Linux que proporciona un nivel adicional de control y protección para aplicaciones y recursos del sistema. Fue desarrollado por la Agencia de Seguridad Nacional (NSA) de los Estados Unidos en colaboración con la comunidad de código abierto.
-        </p>
-        <p>
-          En la fig. # se muestra la configuración relacionada con SElinux dentro de LufacSGA en esta interfaz gráfica podrá desactivar esta protección; monitorear las modificaciones del sistemas permitidas o denegadas por SElinux y ver los controles de accesos y errores establecidos por SElinux.
-        </p>
-        <p>
-          La función principal de SELinux es aplicar políticas de control de acceso obligatorio (MAC, por sus siglas en inglés) en el nivel del núcleo del sistema operativo. Esto significa que SELinux controla el acceso de procesos y recursos en función de políticas de seguridad predefinidas. A través de estas políticas, SELinux permite limitar los privilegios de acceso de los procesos y garantiza que solo se permitan las acciones que estén explícitamente autorizadas.
-        </p>
-          <p>Algunas de las características clave de SELinux incluyen:</p>
           <ol>
-            <li>Control granular: SELinux permite especificar políticas de control de acceso a nivel de archivo, directorio, puerto de red y otros recursos del sistema. Esto brinda un alto nivel de precisión en la configuración de la seguridad.</li>
-            <li>Contexto de seguridad: Cada archivo, proceso y recurso en el sistema tiene un contexto de seguridad asociado que determina las acciones permitidas. Estos contextos son parte integral de las políticas de SELinux.</li>
-            <li>Políticas predeterminadas: SELinux proporciona políticas de seguridad predefinidas para diversos roles y aplicaciones del sistema. Estas políticas pueden ser personalizadas para satisfacer las necesidades específicas del entorno.</li>
-            <li>Aplicación transparente: Para la mayoría de los usuarios y aplicaciones, SELinux opera en segundo plano sin necesidad de intervención directa. Sin embargo, los administradores pueden configurar y personalizar políticas según sea necesario.</li>
-            <li>Auditoría: SELinux ofrece capacidades de auditoría para rastrear y registrar eventos relacionados con la seguridad, lo que puede ser útil para identificar posibles amenazas o vulnerabilidades.</li>
-            <li>Aislamiento mejorado: SELinux ayuda a aislar procesos y recursos, lo que limita la propagación de ataques y la explotación de vulnerabilidades.</li>
+            <li><strong>Docker:</strong></li>
+            <ul>
+              <li><strong>Descripción:</strong> Docker es una tecnología de contenedorización que facilita la gestión de dependencias dentro de un proyecto en todos los niveles (desarrollo y despliegue).</li>
+              <li><strong>Funcionamiento:</strong>
+                <ul>
+                  <li>Utiliza un <strong>demonio en segundo plano</strong> llamado <strong>Docker Daemon</strong> para gestionar imágenes, contenedores, redes y volúmenes de almacenamiento.</li>
+                  <li>El <strong>CLI de Docker</strong> (interfaz de línea de comandos) se comunica con el demonio Docker para ejecutar comandos.</li>
+                  <li>Los contenedores están completamente aislados, pero pueden interactuar con el sistema operativo o el hardware a través de interfaces específicas.</li>
+                </ul>
+              </li>
+              <li><strong>Ventajas:</strong><ul>
+                <li>Amplia adopción y comunidad activa.</li>
+                <li>Facilita el transporte e instalación de paquetes de datos mediante imágenes de contenedor.</li>
+                <li>Automatiza el despliegue de aplicaciones.</li>
+              </ul></li>
+              <li><strong>Desventajas:</strong>
+              <ul>
+                <li>Requiere privilegios root para ejecutar el demonio.</li>
+                <li>El daemon central puede generar preocupaciones de seguridad.</li>
+                <li>Mayor complejidad en la orquestación de contenedores (por ejemplo, Docker Swarm).</li>
+              </ul></li>
+              <li><strong>Estado Actual:</strong> Docker ya no recibe soporte oficial en Red Hat Enterprise Linux 8 (RHEL 8).</li>
+            </ul>
+            <li><strong>Podman:</strong>
+              <ul>
+                <li><strong>Descripción:</strong> Podman es un gestor de <strong>pods</strong> para la creación y gestión de contenedores. Es compatible con las especificaciones de contenedores OCI (Open Container Initiative).
+                </li>
+                <li> <strong>Funcionamiento:</strong>
+                  <ul>
+                    <li><strong>Sin demonio central:</strong> A diferencia de Docker, Podman no necesita derechos root y no tiene un daemon central.</li>
+                    <li>Cada contenedor es un proceso <strong>regular de Linux</strong>, similar a <b>rkt</b></li>
+                    <li>Basado en Docker, pero originalmente concebido como una herramienta de <b>depuración</b>.</li>
+                  </ul>
+                  <li><b>Ventajas:</b>
+                  <ul>
+                    <li>Mayor seguridad al no requerir privilegios root.</li>
+                    <li>Ligero y fácil de usar.</li>
+                    <li>Compatible con las imágenes de contenedor existentes.</li>
+                  </ul></li>
+                  <li><b>Desventajas:</b>
+                  <ul>
+                    <li>Algunos errores que aún deben abordarse.</li>
+                    <li>Menos maduro en comparación con Docker.</li>
+                  </ul></li>
+                  <li><b>Estado Actual:</b> Red Hat considera a Podman como el <b>sucesor oficial de Docker</b>.</li>
+                </li>
+              </ul>
+            </li>
           </ol>
           <p>
-            Es importante tener en cuenta que SELinux puede resultar complejo de configurar y entender correctamente, especialmente para usuarios sin experiencia en seguridad. Sin embargo, proporciona una capa adicional de seguridad valiosa, especialmente en entornos donde la seguridad es una prioridad crítica, como servidores de producción y sistemas de alto riesgo.
-
-          </p>
-          <span class="image featured">
-            <img src="images/info01/img_info01_6.png" alt="">
-            <p><strong>Figura 7.</strong> Informe de diagnóstico.
-            </p>
-          </span>
-          <p>
-            La sección de informe de Diagnóstico es el apartado donde el usuario puede reportar problemas o comportamientos anómalos del sistema; involucrarse en la revisión de configuraciones incorrectas, conflictos de software, vulnerabilidades de seguridad o fallas en hardware. La identificación de problemas puede abarcar desde cuellos de botella de rendimiento hasta fallos en componentes críticos del sistema. 
-          </p>
-          <span class="image featured">
-            <img src="images/info01/img_info01_7.png" alt="">
-            <p><strong>Figura 8.</strong> Administración y monitoreo mediante la red IMPI del cluster.
-            </p>
-          </span>
-          <p>
-            Se pueden administrar y monitorear la red IMPI del cluster:
+           <b>Conclusión:</b> <a href="https://www.ionos.es/digitalguide/servidores/know-how/podman-vs-docker/">Podman es una alternativa más segura y ligera a Docker</a> Podman es una alternativa más segura y ligera a Docker, especialmente para aquellos preocupados por la seguridad y la gestión de contenedores sin un daemon central1234. Si bien ambos tienen similitudes, la elección entre ellos dependerá de tus necesidades específicas y preferencias. 
           </p>
           <ul>
-            <li>Encendido</li>
-            <li>Apagado</li>
-            <li>Estatus</li>
+          <li><b>Referencias:</b>
+          <ul>
+            <li><a href="https://www.ionos.es/digitalguide/servidores/know-how/podman-vs-docker/">IONOS - Podman vs. Docker: comparativa de las dos herramientas</a></li>
+            <li><a href="https://geekflare.com/es/podman-vs-docker/">Geekflare Spain - Podman vs Docker: ¿Cuál elegir?</a> </li>
+            <li><a href="https://todoforti.net/redes/comparacion-podman-vs-docker/"> Todoforti - Comparación: Podman vs Docker</a></li>
+            <li><a href="https://aprendeit.com/conoces-las-principales-diferencias-entre-docker-y-otras-plataformas-de-contenedores/">Aprende IT - Conoces las principales diferencias entre Docker y otras plataformas de contenedores</a> </li>
+          </ul></li>
           </ul>
-          <p>
-            En última instancia, el diagnóstico del sistema contribuye a mantener la integridad y confiabilidad de LufacSGA, minimizando el tiempo de inactividad no planificado y optimizando el rendimiento general. Además, al abordar proactivamente los problemas, ayuda a prevenir crisis mayores y a garantizar un entorno informático más seguro y eficiente.
-          </p>
-
-        
-
-          
           
           <footer>
             <ul class="stats">
