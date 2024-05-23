@@ -21,3 +21,21 @@ h1 h2 {
     width: 300px;
     height: auto; /* Mantiene la proporción */
 }
+
+
+.contenedor-img {
+    position: relative;
+    width: 100%; /* Ajusta según sea necesario */
+    height: 300px; /* Ajusta según sea necesario */
+    background-color: #ffffff; /* Solo para visualizar el contenedor */
+}
+
+.imagen-esquina {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 100px; /* Ajusta este valor según sea necesario */
+    max-height: 100px; /* Ajusta este valor según sea necesario */
+    width: auto;
+    height: auto;
+}
