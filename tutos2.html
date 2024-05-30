@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/comment.css">
   </head>
   <body class="single is-preload">
     <!-- Wrapper -->
@@ -135,8 +136,33 @@
           </code>
           <p>Con esto debe tener ya Wayfarer instalado en sus sistema GNU/Linux y podrá grabar sus escritorios siun muchos problema. El programa es bastante intuitivo pero si tiene algun poblema en entender ¿cómo usarlo como usurio? vaya a la página del <a href="https://github.com/stronnag/wayfarer">desarrollador de Wayfarer</a> para mas detalle.</p>
           <p>Si desea desintalar, auxíliese de la herramienta synaptic.</p>
-        
-          
+
+        <!-- Comentarios del articulo -->
+
+          <div class="container">
+        <div class="head"><h1>Postear Comentario</h1></div>
+        <div><span id="comment">0</span> Comentario</div>
+        <div class="text"><p>Agradesco todos tus comentario</p></div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="images/logo.png" alt="">
+            <div class="content">
+                <h2>Comenta como:</h2>
+                <input type="text" value="Anonymous" class="user">
+                <div class="commentinput">
+                    <input type="text" placeholder="Inserte comentario" class="usercomment">
+                    <div class="buttons">
+                        <button type="submit" disabled id="publish">Publicar</button>
+                        <div class="notify">
+                            <input type="checkbox" name="" value="" class="notifyinput"><span>Notificame</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="policy">Este sitio esta protegido por reCATCHA, por la <a href="#">políticas de privacidad</a> y <a href="#">termino y condiciones</a> de Google</p>
+            </div>
+        </div>
+    </div>
+
           <footer>
             <ul class="stats">
               <li><a href="tutoriales.html">Tutoriales</a></li>
@@ -194,5 +220,65 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      "use strict";
+
+const userId = {
+    name: null,
+    identity: null,
+    image: null,
+    message: null,
+    date: null
+}
+
+const userComment = document.querySelector(".usercomment"); // caja de comentario
+const publishBtn = document.querySelector("#publish"); //Boton de publicar
+const comment = document.querySelector(".comments"); //Es un div 
+const userName = document.querySelector(".user");
+
+userComment.addEventListener("input", e => {
+    if (!userComment.value) {
+        publishBtn.setAttribute("disabled","disabled");
+        publishBtn.classList.remove("abled")
+    } else {
+        publishBtn.removeAttribute("disabled");
+        publishBtn.classList.add("abled")
+    }
+})
+
+function addPost() {
+    // console.log("Funcionó")
+    if (!userComment.value) return;
+    userId.name = userName.value;
+    if (userId.name==="Anonymous") {
+        userId.identity = false;
+        userId.image="images/anonymous.png";
+    } else {
+        userId.identity = true;
+        userId.image = "images/logo.png"
+    }
+
+    userId.message = userComment.value;
+    userId.date = new Date().toDateString();
+    let published = 
+    `<div class="parents">
+        <img src="${userId.image}">
+        <div>
+            <h1>${userId.name}</h1>
+            <p>${userId.message}</p>
+            <div class="engagements"><img src="images/like.png"><img src="images/share.png"></div>
+            <span class="date">${userId.date}</span>
+        </div>
+    </div>`;
+
+    comment.innerHTML += published;
+    userComment.value ="";
+
+    let commentNum = document.querySelectorAll(".parents").length;
+    document.getElementById("comment").textContent = commentNum;
+}
+
+publishBtn.addEventListener("click", addPost)
+    </script>
   </body>
 </html>
