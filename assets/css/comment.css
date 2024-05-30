@@ -12,6 +12,7 @@ body {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 .container {
+  display: flex;
   background: #fff;
   padding: 20px;
   font-family: monospace;
