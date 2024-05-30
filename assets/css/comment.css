@@ -1,23 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f2f2f2;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-}
+
 .container {
-   
+  display: flex;
+  flex-direction: column;
   background: #fff;
   padding: 20px;
   font-family: monospace;
   width: 500px;
-  box-shadow: 0 0 5px #000;
+  /* box-shadow: 0 0 5px #000; */
+}
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container > * {
+    flex: 1 1 calc(50% - 16px); /* Dos columnas en pantallas más anchas */
+    margin: 8px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container > * {
+    flex: 1 1 calc(33.33% - 16px); /* Tres columnas en pantallas aún más anchas */
+  }
 }
 .head {
   color: #3c3b3b;
