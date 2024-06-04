@@ -12,7 +12,7 @@ html, body {
     height: 100vh; /* Ocupa el 100% de la altura de la ventana */
 }
 
-h1{
+.gate-title{
     font-family: "Raleway", Helvetica, sans-serif;
     text-transform: uppercase;
     margin: 0 0 0.5em 0;
