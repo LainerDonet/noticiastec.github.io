@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Guía de instalación WRF model</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+     <!-- Título de la página -->
+  <meta property="og:title" content="Guía de instalación de WRF">
+  <!-- Descripción de la página -->
+  <meta property="og:description" content="Una guía para la instalación del WRF model">
+  <!-- URL de la imagen de vista previa -->
+  <meta property="og:image" content="https://lainerdonet.github.io/noticiastec.github.io/images/pic-14.jpg">
+  <!-- URL de la página -->
+  <meta property="og:url" content="URL_de_tu_página">
+  <!-- Tipo de contenido -->
+  <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  </head>
+  <body class="single is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="gate.html">Informes Lufac</a></h1>
+        <nav class="links">
+          <ul>
+            <li><a href="index.html">Noticias</a></li>
+            <li><a href="gate.html">Informes</a></li>
+            <li><a href="tutoriales.html">Tutoriales</a></li>
+            <!-- <li><a href="#">Videos</a></li> -->
+            <li><a href="about.html">Sobre la Página</a></li>
+          </ul>
+        </nav>
+        <nav class="main">
+          <ul>
+            <li class="search">
+              <a class="fa-search" href="#search">Search</a>
+              <form id="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search" />
+              </form>
+            </li>
+            <li class="menu">
+              <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <section id="menu">
+        <!-- Search -->
+        <section>
+          <form class="search" method="get" action="#">
+            <input type="text" name="query" placeholder="Search" />
+          </form>
+        </section>
+
+        <!-- Links -->
+        <section>
+          <ul class="links">
+            <li>
+              <a href="index.html">
+                <h3>Noticias Tec</h3>
+                <p>Blog de noticias de Tegnologia actualizada</p>
+              </a>
+            </li>
+            <li>
+              <a href="gate.html">
+                <h3>Informes</h3>
+                <p>Informes de Proyectos en Desarrollo</p>
+              </a>
+            </li>
+            <li>
+              <a href="tutoriales.html">
+                <h3>Tutoriales</h3>
+                <p>Algunos tutoriales respescto a Linux y HPC</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h3>Videos</h3>
+                <p>
+                  Contenido Multimedia desarrollado para la difunsion Cientifica
+                  y Tecnológica
+                </p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+          <ul class="actions stacked">
+            <li><a href="gate.html" class="button large fit">Log In</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <article class="post">
+          <header>
+            <div class="title">
+              <h2>
+                <a href="#"> Guía de instalación WRF model</a>
+              </h2>
+              <p>Guía instalacion por Lainer</p>
+            </div>
+            <div class="meta">
+              <time class="published" datetime="2024-06-04">Junio 04, 2024</time>
+              <a href="#" class="author"
+                ><span class="name"></span><img src="images/avatar.jpg" alt=""
+              /></a>
+            </div>
+          </header>
+          <span class="image featured"
+            ><img src="images/pic-14.jpg" alt=""
+          /></span>
+          <p>
+            El modelo WRF, que significa Weather Research and Forecasting, es un avanzado sistema de modelado atmosférico desarrollado para simular y predecir el comportamiento del tiempo en la atmósfera terrestre. Este modelo es ampliamente utilizado en la investigación meteorológica y en la predicción del tiempo a corto y mediano plazo.
+          </p>
+          <p>
+            Desarrollado inicialmente por el Centro Nacional de Investigación Atmosférica (NCAR) y la Administración Nacional Oceánica y Atmosférica (NOAA) en los Estados Unidos, el WRF ha evolucionado para convertirse en un modelo flexible y de código abierto. Su flexibilidad permite adaptarse a una variedad de escalas espaciales y temporales, lo que lo hace adecuado para estudiar fenómenos atmosféricos locales y globales.
+          </p>
+          <p>
+            El WRF utiliza técnicas de integración numérica avanzadas para simular procesos atmosféricos complejos, como la convección, la radiación, la interacción suelo-atmósfera y otros procesos físicos esenciales. Además, el modelo puede ser configurado para simular diversos aspectos meteorológicos, como la temperatura, la humedad, la velocidad del viento y las precipitaciones.
+          </p>
+          <p>
+            Debido a su capacidad para proporcionar pronósticos meteorológicos detallados y personalizados, el modelo WRF es utilizado por meteorólogos, investigadores y científicos en todo el mundo para entender y prever el tiempo con mayor precisión. Su versatilidad y aplicaciones extensas hacen del WRF un instrumento valioso en la investigación climática y en la mejora de las capacidades de pronóstico meteorológico.
+          </p>
+          <p>En esta guía se describe como instalar el WRF en los siguientes pasos: </p>
+          <ul>
+            <li>Pruebas del entorno del sistema.</li>
+            <li>Instalación de las bibliotecas de construcción necesaria para compilar WRF.</li>
+            <li>Pruebas de compatibilidad de bibliotecas.</li>
+            <li>Compilar el WRF.</li>
+            <li>Compilar WPS. </li>
+            <li>Datos de geografía estática.</li>
+          </ul>
+          <h3>Pruebas del entorno del sistema.</h3>
+          <ol>
+            <li>En primer lugar, es muy importante tener un compilador gfortran, además de gcc y cpp. Para probar si existen en el sistema, escriba lo siguiente:
+              <ul>
+                <li><code>which gfortran </code></li>
+                <li><code>which cpp</code></li>
+                <li><code>which gcc</code></li>
+              </ul>
+              <p>Si los tiene instalados, se le debe proporcionar una ruta para la ubicación de cada uno.</p>
+              <p>
+                Se recomienda un compilador gcc versión 1, en prueba reciente se demostró que es una de las versiones que funciona de mejor manera para compilar la versión de WRF 4.5. Para determinar que versión de gcc tiene instalado ejecute:
+              </p>
+              <ul>
+                <li><code>gcc –version o gcc -v</code></li>
+              </ul>
+              <li>Crear una área de trabajo para la instalación de software. Una carpeta que donde se encontrará todos los ficheros y directorios necesarios. Ejemplo Build_WRF. Dentro de esta carpeta debería contener las carpetas: LIBRARIES, TESTS, WRF y WPS 
+              </li>
+              <li>
+                <p>Hay algunas pruebas simples que se pueden ejecutar para verificar que el compilador Fortran esté construido correctamente y que sea compatible con el compilador C.</p>
+                <p>
+                   <b>NOTA:</b> Si alguna de estas pruebas falla, deberá comunicarse con el administrador de sistemas de su institución para obtener ayuda, ya que son específicas de su entorno particular y no tenemos los recursos para respaldar este tipo de errores.
+                </p>
+                <p>
+                  A continuación se muestra un archivo tar que contiene las pruebas. Descargue el archivo tar y colóquelo en el directorio TESTS.
+                </p>
+                <a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/Fortran_C_tests.tar">Fortran_C_tests.tar</a>
+                <p>Para descomprimir el archivo tar, escriba:</p>
+                <ul>
+                  <li><code>tar -xf Fortran_C_tests.tar</code></li>
+                </ul>
+                <p>o</p>
+                <ul>
+                  <li><code>tar -xvf Fortran_C_tests.tar</code>(Esta opción permite estar más en control)
+                  </li>
+                </ul>
+                <p>Hay 7 pruebas disponibles, para comenzar desde arriba y realizarlas, una a la vez.</p>
+                 <p><b>Prueba #1:</b> Prueba Fortran de formato fijo: <code>TEST_1_fortran_only_fixed.f
+                </code></p>
+                <p>Escriba lo siguiente en la línea de comando:</p>
+                <ul>
+                  <li><code>gfortran TEST_1_fortran_only_fixed.f</code></li>
+                </ul>
+                <p>Ahora escribe:</p>
+                <ul>
+                  <li><code>./a.out</code></li>
+                </ul>
+                <p>Lo siguiente debería imprimirse en la pantalla:</p>
+                <code>SUCCESS test 1 fortran only fixed format</code>
+               <p><b>Prueba #2:</b> Fortran de formato libre: <code>TEST_2_fortran_only_free.f90</code></p>
+               <p>Escriba lo siguiente en la línea de comando:</p>
+               <ul>
+                <li><code>gfortran TEST_2_fortran_only_free.f90</code></li>
+               </ul>
+               <p>Ahora escribe:</p>
+               <ul>
+                <li><code>./a.out</code></li>
+               </ul>
+               <p>
+                Lo siguiente debería imprimirse en la pantalla:
+               </p>
+               <pre>
+                <code>
+                  Assume Fortran 2003: has FLUSH, ALLOCATABLE, derived 
+                  type, and ISO C Bindin
+                  SUCCESS test 2 fortran only free format
+                </code>
+               </pre>
+               <p><b>Prueba #3:</b> C: <code>TEST_3_c_only.c</code></p>
+               <p>Escriba lo siguiente en la línea de comando:</p>
+               <ul>
+                <li><code>gcc TEST_3_c_only.c</code></li>
+               </ul>
+               <p>Ahora escribe:</p>
+               <ul>
+                <li><code>./a.out</code></li>
+               </ul>
+               <p>Lo siguiente debería imprimirse en la pantalla:</p>
+               <pre><code>
+                SUCCESS test 3 c only
+               </code></pre>
+               <p>
+                <b>Prueba #4:</b> Fortran llamando a una función C (nuestro gcc y gfortran tienen diferentes valores predeterminados, por lo que obligamos a ambos a usar siempre 64 bits [-m64] al combinarlos): <code>TEST_4_fortran+c_c.c</code>, y <code>TEST_4_fortran+x_f.f90</code> 
+              </p>
+              <p>Escriba lo siguiente en la línea de comando:</p>
+              <ul>
+                <li><code>gcc -c -m64 TEST_4_fortran+c_c.c</code></li>
+              </ul>
+              <p>y escribe después:</p>
+              <ul>
+                <li><code>gfortran -c -m64 TEST_4_fortran+c_f.f90</code></li>
+              </ul>
+              <p>luego:</p>
+              <ul>
+                <li><code>gfortran -m64 TEST_4_fortran+c_f.o TEST_4_fortran+c_c.o</code></li>
+              </ul>
+              <p>posteriormente escribe:</p>
+              <ul>
+                <li><code>./a.out</code></li>
+              </ul>
+              <p>Lo siguiente debería imprimirse en la pantalla:</p>
+              <pre><code>
+                C function called by Fortran
+                Values are xx = 2.00 and ii = 1
+                SUCCESS test 4 fortran calling c
+                </code></pre>
+              </li>
+              
+            </li>
+            <li>
+              <p>Además de los compiladores necesarios para fabricar los ejecutables de WRF, el sistema de compilación de WRF tiene scripts como nivel superior para la interfaz de usuario. El sistema de secuencias de comandos WRF utiliza y, por lo tanto, es necesario tener lo siguiente:
+              </p>
+              <ul>
+                <li>csh</li>
+                <li>perl</li>
+                <li>sh</li>
+              </ul>
+              <p>
+                Para probar si estos lenguajes de secuencias de comandos funcionan correctamente en el sistema, hay que ejecutar 3 pruebas. Estas pruebas se incluyeron en el "Archivo Tar de pruebas Fortran y C".
+              </p>
+              <p><b>Prueba #5:</b> csh En la línea de comando, escriba:</p>
+              <ul>
+                <li><code>./TEST_csh.csh</code></li>
+              </ul>
+              <p>el resultado debería ser:</p>
+              <pre><code>SUCCESS csh test</code></pre>
+              <p><b>Prueba #6:</b> perl En la línea de comando, escriba:</p>
+              <ul>
+                <li><code>./TEST_perl.pl</code></li>
+              </ul>
+              <p>el resultado debería ser:</p>
+              <pre><code>SUCCESS perl test</code></pre>
+              <p><b>Prueba #7:</b> sh En la línea de comando, escriba:</p>
+              <ul>
+                <li><code>./TEST_sh.sh</code></li>
+              </ul>
+              <p>el resultado debería ser:</p>
+              <pre><code>SUCCESS sh test</code></pre>
+            </li>
+            <li>
+              Finalmente, dentro de los scripts hay bastantes comandos UNIX que están disponibles independientemente del shell que se utilice. Los siguientes comandos estándar de UNIX son obligatorios:
+              <pre><code>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>ar</td>
+                      <td>head</td>
+                      <td>sed</td>
+                    </tr>
+                    <tr>
+                      <td>awk</td>
+                      <td>hostname</td>
+                      <td>sleep</td>
+                    </tr>
+                    <tr>
+                      <td>cat</td>
+                      <td>ln</td>
+                      <td>sort</td>
+                    </tr>
+                    <tr>
+                      <td>cd</td>
+                      <td>ls</td>
+                      <td>tar</td>
+                    </tr>
+                    <tr>
+                      <td>cp</td>
+                      <td>make</td>
+                      <td>touch</td>
+                    </tr>
+                    <tr>
+                      <td>cut</td>
+                      <td>mkdir</td>
+                      <td>touch</td>
+                    </tr>
+                    <tr>
+                      <td>expr</td>
+                      <td>mv</td>
+                      <td>uname</td>
+                    </tr>
+                    <tr>
+                      <td>file</td>
+                      <td>nm</td>
+                      <td>wc</td>
+                    </tr>
+                    <tr>
+                      <td>grep</td>
+                      <td>printf</td>
+                      <td>which</td>
+                    </tr>
+                    <tr>
+                      <td>gzip</td>
+                      <td>rm</td>
+                      <td>m4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </code></pre>
+            </li>
+          </ol>
+          <h3>Instalación de las bibliotecas de construcción necesaria para compilar WRF.</h3>
+          <p>Antes de comenzar, necesita crear otro directorio. Vaya a su directorio Build_WRF:</p>
+          <ul>
+            <li><code>cd Build_WRF</code></li>
+          </ul>
+          <p>y luego crear un directorio llamado "LIBRARIES"</p>
+          <ul>
+            <li><code>mkdir LIBRARIES</code></li>
+          </ul>
+          <p>
+            Dependiendo del tipo de ejecución que desee realizar, existen varias bibliotecas que deben instalarse. A continuación se muestran 5 bibliotecas. Descargue los 5 archivos tar y colóquelos en el directorio LIBRARIES.
+          </p>
+          <ul>
+            <li><a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/netcdf-c-4.7.2.tar.gz">netcdf-c-4.7.2</a></li>
+            <li><a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/netcdf-fortran-4.5.2.tar.gz"></a>netcdf-fortran-4.5.2</li>
+            <li><a href="https://www.mpich.org/static/downloads/4.1.2/mpich-4.1.2.tar.gz">Mpich-4.1.2</a></li>
+            <li><a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/zlib-1.2.11.tar.gz">zlib-1.2.11</a></li>
+            <li><a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/libpng-1.2.50.tar.gz">Libpng-1.2.50</a></li>
+            <li><a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/jasper-1.900.1.tar.gz">Jasper-1.900.1</a></li>
+          </ul>
+          <p>
+            Es importante tener en cuenta que todas estas bibliotecas deben instalarse con los mismos compiladores que se utilizarán para instalar WRF y WPS.
+          </p>
+          Antes de instalar las bibliotecas, es necesario configurar estas rutas con <code>vim /home/user/.bashrc</code>:
+          <pre><code>
+export WRFDIR=/home/user/Build_WRF/LIBRARIES
+export CC=gcc
+export CXX=g++
+export FC=gfortran
+export FCFLAGS=-m64
+export F77=gfortran
+export FFLAGS=-m64
+export JASPERLIB=$WRFDIR/grib2/lib
+export JASPERINC=$WRFDIR/grib2/include
+export LDFLAGS=-L$WRFDIR/grib2/lib
+export CPPFLAGS=-I$WRFDIR/grib2/include
+
+export PATH=$WRFDIR/netcdf/bin:$PATH
+export NETCDF=$WRFDIR/netcdf
+export CPPFLAGS=-I$WRFDIR/netcdf/include
+export LDFLAGS=-L$WRFDIR/netcdf/lib
+
+export PATH=$WRFDIR/mpich/bin:$PATH
+
+          </code></pre>
+          <p>
+            También es importante actualizar las bashrc con el comando:
+          </p>
+        <ul>
+          <li>
+            <code>source /home/user/.bashrc</code>
+          </li>
+        </ul>
+        <ol>
+          <li>
+            NetCDF: ¡Esta biblioteca siempre es necesaria! Esta instalación consta de una biblioteca netcdf-c y netcdf-fortran.
+            <ul>
+              <li><code>tar xzvf netcdf-c-4.7.2.tar.gz </code></li>
+              <li><code>cd netcdf-c-4.7.2</code></li>
+              <li><code>./configure --prefix=$DIR/netcdf --disable-dap
+                --disable-netcdf-4 --disable-shared
+              </code></li>
+              <li><code>make</code></li>
+              <li><code>make install</code></li>
+              <li><code>cd .. (Añadir el set netcdf c al bashrc)</code></li>
+              <li><code>tar xzvf netcdf-fortran-4.5.2.tar.gz </code></li>
+              <li><code>cd netcdf-fortran-4.5.2</code></li>
+              <li><code>./configure --prefix=$DIR/netcdf --disable-dap
+                --disable-netcdf-4 --disable-shared
+              </code></li>
+              <li><code>make</code></li>
+              <li><code>make install</code></li>
+              <li><code>cd ..</code></li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <b>MPICH:</b> esta biblioteca es necesaria si planea construir WRF en paralelo. Si su máquina no tiene más de 1 procesador, o si no necesita ejecutar WRF con múltiples procesadores, puede omitir la instalación de MPICH.
+            </p>
+            <p>
+              En principio, cualquier implementación del estándar MPI-2 debería funcionar con WRF; sin embargo, tenemos la mayor experiencia con MPICH y, por lo tanto, eso es lo que se describirá aquí.
+            </p>
+            <p>
+              Suponiendo que todos los comandos 'export' ya se emitieron al configurar NetCDF, puede continuar con la instalación de MPICH, emitiendo cada uno de los siguientes comandos:
+            </p>
+            <ul>
+              <li><code>tar xzvf mpich-3.0.4.tar.gz </code></li>
+              <li><code>cd mpich-3.0.4</code></li>
+              <li><code>./configure --prefix=$DIR/mpich</code></li>
+              <li><code>make</code></li>
+              <li><code>make install</code></li>
+              <li><code>cd ..</code></li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <b>zlib:</b> esta es una biblioteca de compresión necesaria para compilar WPS (específicamente ungrib) con capacidad GRIB2.
+            </p>
+            <p>
+              Suponiendo que todos los comandos "export" de la instalación de NetCDF ya estén configurados, puede pasar a los comandos para instalar zlib.
+            </p>
+            <ul>
+              <li><code>tar xzvf zlib-1.2.7.tar.gz   cd zlib-1.2.7</code></li>
+              <li><code>./configure --prefix=$DIR/grib2</code></li>
+              <li><code>make</code></li>
+              <li><code>make install</code></li>
+              <li><code>cd ..</code></li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <b>libpng:</b> esta es una biblioteca de compresión necesaria para compilar WPS (específicamente ungrib) con capacidad GRIB2.
+            </p>
+            <p>
+              Suponiendo que todos los comandos "export" de la instalación de NetCDF ya estén configurados, puede pasar a los comandos para instalar zlib.
+            </p>
+            <ul>
+              <li><code>tar xzvf libpng-1.2.50.tar.gz</code></li>
+              <li><code>cd libpng-1.2.50</code></li>
+              <li><code>./configure --prefix=$DIR/grib2</code></li>
+              <li><code>make</code></li>
+              <li><code>make install</code></li>
+              <li><code>cd ..</code></li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <b>Jasper:</b> esta es una biblioteca de compresión necesaria para compilar WPS (específicamente ungrib) con capacidad GRIB2.
+            </p>
+            <p>
+              Suponiendo que todos los comandos "export" de la instalación de NetCDF ya estén configurados, puede pasar a los comandos para instalar zlib.
+            </p>
+            <ul>
+              <li><code>tar xzvf jasper-1.900.1.tar.gz</code></li>
+              <li><code>cd jasper-1.900.1</code></li>
+              <li><code>./configure --prefix=$DIR/grib2</code></li>
+              <li><code>make</code></li>
+              <li><code>make install</code></li>
+              <li><code>cd ..</code></li>
+            </ul>
+          </li>
+        </ol>
+        <h3>Pruebas de compatibilidad de bibliotecas.</h3>
+        <p>
+          Una vez que la máquina de destino sea capaz de crear pequeños ejecutables de Fortran y C (lo que se verificó en la sección Pruebas del entorno del sistema), y después de que se hayan construido las bibliotecas NetCDF y MPI (dos de las bibliotecas de la sección Creación de bibliotecas), emular el WRF. Comportamiento del código, se requieren dos pequeñas pruebas adicionales. Necesitamos verificar que las bibliotecas puedan funcionar con los compiladores que se utilizarán para las compilaciones WPS y WRF.
+        </p>
+        <p><b>NOTA:</b> Si alguna de estas pruebas falla, deberá comunicarse con el administrador de sistemas de su institución para obtener ayuda, ya que son específicas de su entorno particular y no tenemos los recursos para respaldar este tipo de errores.
+        </p>
+        <p>
+          A continuación se muestra un archivo tar que contiene estas pruebas. Descargue este archivo tar y colóquelo en el directorio TESTS, y luego "cd" en el directorio TESTS:
+        </p>
+        <a href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/Fortran_C_NETCDF_MPI_tests.tar">Fortran_C_NETCDF_MPI_tests.tar</a>
+        <p>Para descomprimir el archivo tar, escriba:</p>
+        <ul>
+          <li><code>tar -xf Fortran_C_NETCDF_MPI_tests.tar</code></li>
+        </ul>
+        <p>Hay 2 pruebas:</p>
+        <ol>
+          <li>
+            <b>Prueba #1:</b> Fortran + C + NetCDF
+            <p>
+              La prueba exclusiva de NetCDF requiere que el archivo de inclusión del paquete NETCDF esté en este directorio. Copie el archivo aquí:
+            </p>
+            <ul>
+              <li><code>cp ${NETCDF}/include/netcdf.inc .</code></li>
+            </ul>
+            <p>
+              Compile los códigos Fortran y C para esta prueba (la opción -c indica que no se debe intentar crear un ejecutable). Escriba los siguientes comandos:
+            </p>
+            <ul>
+              <li><code>gfortran -c 01_fortran+c+netcdf_f.f</code></li>
+              <li><code>gcc -c 01_fortran+c+netcdf_c.c</code></li>
+              <li><code>
+                gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o \
+                   -L${NETCDF}/lib -lnetcdff -lnetcdf
+              </code></li>
+              <li>./a.out</li>
+            </ul>
+            <p>Lo siguiente debería aparecer en su pantalla:</p>
+            <pre><code>
+C function called by Fortran
+Values are xx = 2.00 and ii = 1
+SUCCESS test 1 fortran + c + netcdf
+
+            </code></pre>
+          </li>
+          <li>
+            <p><b>Prueba #2:</b> Fortran + C + NetCDF + MPI</p>
+            <p>
+              La prueba NetCDF+MPI requiere que los archivos de inclusión de ambos paquetes estén en este directorio, pero los scripts MPI automáticamente hacen que el archivo mpif.h esté disponible sin ayuda, por lo que no es necesario copiarlo. Copie el archivo de inclusión de NetCDF aquí:
+            </p>
+            <ul>
+              <li><code>cp ${NETCDF}/include/netcdf.inc .</code></li>
+            </ul>
+            <p>
+              Tenga en cuenta que los ejecutables MPI mpif90 y mpicc se utilizan a continuación al compilar. Emita los siguientes comandos:
+            </p>
+            <ul>
+              <li><code>mpif90 -c 02_fortran+c+netcdf+mpi_f.f</code></li>
+              <li><code>mpicc -c 02_fortran+c+netcdf+mpi_c.c</code></li>
+              <li><code>mpif90 02_fortran+c+netcdf+mpi_f.o \
+                        02_fortran+c+netcdf+mpi_c.o \
+                     -L${NETCDF}/lib -lnetcdff -lnetcdf
+                </code></li>
+              <li><code>mpirun ./a.out</code></li>
+            </ul>
+            <p>
+              Lo siguiente debería aparecer en su pantalla:
+            </p>
+            <pre><code>
+C function called by Fortran
+Values are xx = 2.00 and ii = 1
+status = 2
+SUCCESS test 2 fortran + c + netcdf + mpi
+
+            </code></pre>
+          </li>
+        </ol>
+
+          
+          
+          <footer>
+            <ul class="stats">
+              <li><a href="tutoriales.html">Informes</a></li>
+              <li><a href="#" class="icon solid fa-heart">28</a></li>
+              <li><a href="#" class="icon solid fa-comment">128</a></li>
+            </ul>
+          </footer>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <section id="footer">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://x.com/LufacIDT?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name%3ALufacIDT%7Ctwcon%5Es1_c1"
+              class="icon brands fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/LufacIDT/"
+              class="icon brands fa-facebook-f"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/lufacidt/"
+              class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon solid fa-youtube"
+              ><span class="label">YouTube</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon solid fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+        <p class="copyright">
+          &copy; Copyrigth: <a href="http://lufac.com">Lufac</a>.
+        </p>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
