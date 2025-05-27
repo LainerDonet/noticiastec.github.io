@@ -418,7 +418,7 @@ export PATH=$WRFDIR/mpich/bin:$PATH
           </li>
           <li>
             <p>
-              <b>MPICH:</b> esta biblioteca es necesaria si planea construir WRF en paralelo. Si su máquina no tiene más de 1 procesador, o si no necesita ejecutar WRF con múltiples procesadores, puede omitir la instalación de MPICH.
+              <b>MPICH:</b> esta biblioteca es necesaria si planea construir WRF en paralelo. Si su máquina no tiene más de 1 procesador, o si no necesita ejecutar WRF con múltiples procesadores, puede omitir la instalación de MPICH. La instalación de MPICH al ejecutar el comando make es tardada se demora alrededor de 15 minutos, dependiendo de la velocidad de su máquina.
             </p>
             <p>
               En principio, cualquier implementación del estándar MPI-2 debería funcionar con WRF; sin embargo, tenemos la mayor experiencia con MPICH y, por lo tanto, eso es lo que se describirá aquí.
@@ -515,8 +515,7 @@ export PATH=$WRFDIR/mpich/bin:$PATH
               <li><code>gfortran -c 01_fortran+c+netcdf_f.f</code></li>
               <li><code>gcc -c 01_fortran+c+netcdf_c.c</code></li>
               <li><code>
-                gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o \
-                   -L${NETCDF}/lib -lnetcdff -lnetcdf
+                gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L${NETCDF}/lib -lnetcdff -lnetcdf
               </code></li>
               <li>./a.out</li>
             </ul>
@@ -542,9 +541,8 @@ SUCCESS test 1 fortran + c + netcdf
             <ul>
               <li><code>mpif90 -c 02_fortran+c+netcdf+mpi_f.f</code></li>
               <li><code>mpicc -c 02_fortran+c+netcdf+mpi_c.c</code></li>
-              <li><code>mpif90 02_fortran+c+netcdf+mpi_f.o \
-                        02_fortran+c+netcdf+mpi_c.o \
-                     -L${NETCDF}/lib -lnetcdff -lnetcdf
+              <li><code>
+                mpif90 02_fortran+c+netcdf+mpi_f.o 02_fortran+c+netcdf+mpi_c.o -L${NETCDF}/lib -lnetcdff -lnetcdf
                 </code></li>
               <li><code>mpirun ./a.out</code></li>
             </ul>
