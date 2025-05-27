@@ -400,7 +400,7 @@ export PATH=$WRFDIR/mpich/bin:$PATH
             <ul>
               <li><code>tar xzvf netcdf-c-4.7.2.tar.gz </code></li>
               <li><code>cd netcdf-c-4.7.2</code></li>
-              <li><code>./configure --prefix=$DIR/netcdf --disable-dap
+              <li><code>./configure --prefix=$WRFDIR/netcdf --disable-dap
                 --disable-netcdf-4 --disable-shared
               </code></li>
               <li><code>make</code></li>
@@ -408,7 +408,7 @@ export PATH=$WRFDIR/mpich/bin:$PATH
               <li><code>cd .. (Añadir el set netcdf c al bashrc)</code></li>
               <li><code>tar xzvf netcdf-fortran-4.5.2.tar.gz </code></li>
               <li><code>cd netcdf-fortran-4.5.2</code></li>
-              <li><code>./configure --prefix=$DIR/netcdf --disable-dap
+              <li><code>./configure --prefix=$WRFDIR/netcdf --disable-dap
                 --disable-netcdf-4 --disable-shared
               </code></li>
               <li><code>make</code></li>
@@ -427,9 +427,9 @@ export PATH=$WRFDIR/mpich/bin:$PATH
               Suponiendo que todos los comandos 'export' ya se emitieron al configurar NetCDF, puede continuar con la instalación de MPICH, emitiendo cada uno de los siguientes comandos:
             </p>
             <ul>
-              <li><code>tar xzvf mpich-3.0.4.tar.gz </code></li>
-              <li><code>cd mpich-3.0.4</code></li>
-              <li><code>./configure --prefix=$DIR/mpich</code></li>
+              <li><code>tar xzvf mpich-4.1.2.tar.gz </code></li>
+              <li><code>cd mpich-4.1.2</code></li>
+              <li><code>./configure --prefix=$WRFDIR/mpich</code></li>
               <li><code>make</code></li>
               <li><code>make install</code></li>
               <li><code>cd ..</code></li>
@@ -443,8 +443,9 @@ export PATH=$WRFDIR/mpich/bin:$PATH
               Suponiendo que todos los comandos "export" de la instalación de NetCDF ya estén configurados, puede pasar a los comandos para instalar zlib.
             </p>
             <ul>
-              <li><code>tar xzvf zlib-1.2.7.tar.gz   cd zlib-1.2.7</code></li>
-              <li><code>./configure --prefix=$DIR/grib2</code></li>
+              <li><code>tar xzvf zlib-1.2.11.tar.gz</code></li> 
+              <li><code>cd zlib-1.2.11</code></li> 
+              <li><code>./configure --prefix=$WRFDIR/grib2</code></li>
               <li><code>make</code></li>
               <li><code>make install</code></li>
               <li><code>cd ..</code></li>
@@ -460,7 +461,7 @@ export PATH=$WRFDIR/mpich/bin:$PATH
             <ul>
               <li><code>tar xzvf libpng-1.2.50.tar.gz</code></li>
               <li><code>cd libpng-1.2.50</code></li>
-              <li><code>./configure --prefix=$DIR/grib2</code></li>
+              <li><code>./configure --prefix=$WRFDIR/grib2</code></li>
               <li><code>make</code></li>
               <li><code>make install</code></li>
               <li><code>cd ..</code></li>
@@ -476,7 +477,7 @@ export PATH=$WRFDIR/mpich/bin:$PATH
             <ul>
               <li><code>tar xzvf jasper-1.900.1.tar.gz</code></li>
               <li><code>cd jasper-1.900.1</code></li>
-              <li><code>./configure --prefix=$DIR/grib2</code></li>
+              <li><code>./configure --prefix=$WRFDIR/grib2</code></li>
               <li><code>make</code></li>
               <li><code>make install</code></li>
               <li><code>cd ..</code></li>
