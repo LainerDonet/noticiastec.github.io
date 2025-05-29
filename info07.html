@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Guía de instalación WRF model Parte II</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+     <!-- Título de la página -->
+  <meta property="og:title" content="Guía de instalación de WRF parte II">
+  <!-- Descripción de la página -->
+  <meta property="og:description" content="Una guía para la instalación del WRF model parte II">
+  <!-- URL de la imagen de vista previa -->
+  <meta property="og:image" content="https://lainerdonet.github.io/noticiastec.github.io/images/pic-14.jpg">
+  <!-- URL de la página -->
+  <meta property="og:url" content="URL_de_tu_página">
+  <!-- Tipo de contenido -->
+  <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  </head>
+  <body class="single is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="gate.html">Informes Lufac</a></h1>
+        <nav class="links">
+          <ul>
+            <li><a href="index.html">Noticias</a></li>
+            <li><a href="gate.html">Informes</a></li>
+            <li><a href="tutoriales.html">Tutoriales</a></li>
+            <!-- <li><a href="#">Videos</a></li> -->
+            <li><a href="about.html">Sobre la Página</a></li>
+          </ul>
+        </nav>
+        <nav class="main">
+          <ul>
+            <li class="search">
+              <a class="fa-search" href="#search">Search</a>
+              <form id="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search" />
+              </form>
+            </li>
+            <li class="menu">
+              <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <section id="menu">
+        <!-- Search -->
+        <section>
+          <form class="search" method="get" action="#">
+            <input type="text" name="query" placeholder="Search" />
+          </form>
+        </section>
+
+        <!-- Links -->
+        <section>
+          <ul class="links">
+            <li>
+              <a href="index.html">
+                <h3>Noticias Tec</h3>
+                <p>Blog de noticias de Tegnologia actualizada</p>
+              </a>
+            </li>
+            <li>
+              <a href="gate.html">
+                <h3>Informes</h3>
+                <p>Informes de Proyectos en Desarrollo</p>
+              </a>
+            </li>
+            <li>
+              <a href="tutoriales.html">
+                <h3>Tutoriales</h3>
+                <p>Algunos tutoriales respescto a Linux y HPC</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h3>Videos</h3>
+                <p>
+                  Contenido Multimedia desarrollado para la difunsion Cientifica
+                  y Tecnológica
+                </p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+          <ul class="actions stacked">
+            <li><a href="gate.html" class="button large fit">Log In</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <article class="post">
+          <header>
+            <div class="title">
+              <h2>
+                <a href="#"> Guía de instalación WRF model parte II</a>
+              </h2>
+              <p>Guía instalacion por Lainer</p>
+            </div>
+            <div class="meta">
+              <time class="published" datetime="2024-06-04">Mayo 29, 2025</time>
+              <a href="#" class="author"
+                ><span class="name"></span><img src="images/avatar.jpg" alt=""
+              /></a>
+            </div>
+          </header>
+          <span class="image featured"
+            ><img src="images/pic-14.jpg" alt=""
+          /></span>
+          <p>
+            En esta segunda parte de la guía de instalación del modelo WRF( Weather Research and Forecasting Model), se detallan los pasos necesarios después de preparar el entorno del sistema, instalar las bibliotecas requeridas y realizar pruebas de compatibilidad antes de compilar el modelo. El WRF es un modelo numérico ampliamente utilizado en meteorología y climatología para simular y predecir fenómenos atmosféricos a diferentes escalas.
+          </p>
+          <p>
+            La instalación del WRF es un proceso que requiere una cuidadosa preparación del entorno de software y hardware. El modelo WRF es altamente configurable y puede adaptarse a diversas necesidades de investigación y pronóstico meteorológico. Su diseño modular permite a los usuarios seleccionar diferentes configuraciones y opciones según sus requisitos específicos, lo que lo convierte en una herramienta versátil para la simulación atmosférica.
+          </p>
+          <p>
+            Ahora pasaremos a la instalación del WRF y WPS (WRF Preprocessing System), que es un sistema de preprocesamiento de datos meteorológicos utilizado para preparar las condiciones iniciales y de contorno necesarias para ejecutar el modelo WRF. El WPS incluye herramientas para interpolar datos de entrada, generar campos de geografía estática y crear archivos de entrada necesarios para las simulaciones del WRF.
+          </p>
+          <h2>Instalación del WRF y WPS</h2>
+          <p>
+            En esta sección, se describen los pasos necesarios para instalar el modelo WRF y el sistema de preprocesamiento WPS. Estos pasos son fundamentales para garantizar que el modelo funcione correctamente y pueda utilizarse para realizar simulaciones precisas de fenómenos atmosféricos.
+          </p>
+          <p>
+            Antes de comenzar la instalación, es importante asegurarse de que se hayan completado las pruebas del entorno del sistema y de que se hayan instalado las bibliotecas necesarias Descrita en la parte I de este turorial. Estas pruebas y configuraciones previas son esenciales para garantizar que el modelo WRF se compile y ejecute sin problemas. 
+          </p>
+          <h1>Instalación de WRF</h1>
+          <p>
+            Para instalar el modelo WRF, vamos a seguir una serie de pasos que incluyen la compilación del código fuente, la configuración de las opciones de compilación y la generación de los archivos ejecutables necesarios. Estos pasos son cruciales para preparar el modelo para su uso en simulaciones meteorológicas.
+          </p>
+          <h2>Pasos para la instalación del WRF</h2>
+          <ul>
+            <li>
+              Descargar el Modelo WRF de la paguina web de github clonando el repositorio o descarganda el archivo .tar.gz de la version de WRF de interés
+              <ul>
+                <li><code>git clone --recursive-submodules https://github.com/wrf-model/WRF</code></li>
+                <li><a href="https://github.com/wrf-model/WRF/releases/download/v4.5.1/v4.5.1.tar.gz">Link de descarga a WRF v4.5.1</a></li>
+              </ul>
+            </li>
+            <li>Descomprimir el fiche .tar.gz descargado en el directorio de trabajo y moverse al directorio WRF.
+              <ul>
+                <li><code>tar -xvf v4.5.1.tar.gz</code></li>
+                <li><code>cd WRF</code></li>
+              </ul>
+            </li>
+            <li>
+              Ejecutar el script de configuración para seleccionar las opciones de compilación y el tipo de ejecución que se desea utilizar. Esto se puede hacer ejecutando el siguiente comando:
+              <ul>
+                <li><code>./configure</code></li>
+                <li>Dentro del script de configuración se debe escoger el set de compiladores en función de las capacidades de su PC, servidor o cluster</li>
+              </ul>
+            </li>
+            <li>Correr el script de compilación
+              <ul>
+                <li><code>./compile em_real</code></li>
+                <li>Este comando compilará el modelo WRF con las opciones seleccionadas en el paso anterior. Dependiendo de la configuración y la potencia de la máquina, este proceso puede tardar un tiempo considerable.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Puede verificar que la instalación se haya realizado correctamente ejecutando el siguiente comando:
+            <code>
+./run_wrf.exe -h
+           </code> o verificar que se hayan generado los archivos ejecutables en el directorio de trabajo con el siguiente comando:
+            <code>ls -lh main/*exe</code>
+          </p>
+          <h2>Instalación de WPS</h2>
+          <p>
+            El WPS es un sistema de preprocesamiento de datos meteorológicos que se utiliza para preparar las condiciones iniciales y de contorno necesarias para ejecutar el modelo WRF. La instalación del WPS sigue un proceso similar al del WRF, pero con algunas diferencias específicas.
+          </p>
+          <p>
+            Para instalar el WPS, se deben seguir los siguientes pasos:
+          </p>
+          <ul>
+            <li>
+              Descargar el WPS de la página web de github clonando el repositorio o descargando el archivo .tar.gz de la versión de WPS de interés
+              <ul>
+                <li><code>git clone https://github.com/wrf-models/WPS</code></li>
+                <li><a href="https://github.com/wrf-model/WPS/archive/refs/tags/v4.5.tar.gz">Link de descarga del WPS 4.5</a></li>
+
+          </ul>
+            </li>
+            <li>Descomprimir el fichero .tar.gz descargado en el directorio de trabajo y moverse al directorio WPS.
+              <ul>
+                <li><code>tar -xvf v4.5.tar.gz</code></li>
+                <li><code>cd WPS</code></li>
+              </ul>
+            </li>
+            <li>
+              Ejecutar el script de configuración para seleccionar las opciones de compilación y el tipo de ejecución que se desea utilizar. Esto se puede hacer ejecutando el siguiente comando:
+              <ul>
+                <li><code>./configure</code></li>
+                <li>Dentro del script de configuración se debe escoger el set de compiladores en función de las capacidades de su PC, servidor o cluster</li>
+              </ul>
+            </li>
+            <li>Correr el script de compilación
+              <ul>
+                <li><code>./compile</code></li>
+                <li>Este comando compilará el WPS con las opciones seleccionadas en el paso anterior. Dependiendo de la configuración y la potencia de la máquina, este proceso puede tardar un tiempo considerable.</li>
+              </ul>
+            </li>
+          </ul>
+
+          
+          
+          <footer>
+            <ul class="stats">
+              <li><a href="tutoriales.html">Informes</a></li>
+              <li><a href="#" class="icon solid fa-heart">28</a></li>
+              <li><a href="#" class="icon solid fa-comment">128</a></li>
+            </ul>
+          </footer>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <section id="footer">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://x.com/LufacIDT?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name%3ALufacIDT%7Ctwcon%5Es1_c1"
+              class="icon brands fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/LufacIDT/"
+              class="icon brands fa-facebook-f"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/lufacidt/"
+              class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon solid fa-youtube"
+              ><span class="label">YouTube</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon solid fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+        <p class="copyright">
+          &copy; Copyrigth: <a href="http://lufac.com">Lufac</a>.
+        </p>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
